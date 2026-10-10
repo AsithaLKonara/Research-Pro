@@ -65,7 +65,7 @@
   --chart-8: #14b8a6;
 
   /* Typography */
-  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
   /* Spacing scale */
