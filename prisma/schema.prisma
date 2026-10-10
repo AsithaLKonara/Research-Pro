@@ -12,3 +12,9 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+// Stage 1 MVP does not persist research to DB,
+// but Prisma requires at least one model to generate the client.
+model DummyPlaceholder {
+  id String @id @default(uuid())
+}
