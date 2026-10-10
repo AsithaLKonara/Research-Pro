@@ -4,26 +4,26 @@ export function ProductRanking({ products }: { products?: RankedProduct[] }) {
   const displayProducts = products || [];
 
   return (
-    <div className="card p-6 md:p-8">
-      <h3 className="font-mono text-sm text-accent-400 mb-6 tracking-widest uppercase">
-        03. Top Products Ranking
+    <div className="rounded-2xl border border-white/[0.06] bg-[#0B1019] p-5 sm:p-7">
+      <h3 className="mb-6 text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+        Top Candidates
       </h3>
       <div className="space-y-3">
         {displayProducts.length === 0 ? (
-          <div className="text-text-muted">No products available.</div>
+          <div className="text-sm text-slate-500">No products available.</div>
         ) : (
           displayProducts.map((product) => (
-            <div key={product.modelName} className="p-4 rounded-lg bg-surface-2 border border-border-default hover:border-accent-500/50 transition-colors flex items-center gap-4">
-              <div className="w-10 h-10 rounded bg-surface-3 border border-border-strong flex items-center justify-center font-mono text-lg font-bold text-text-primary">
+            <div key={product.modelName} className="group flex items-center gap-4 rounded-xl border border-white/[0.06] bg-white/[0.02] p-4 transition-colors hover:border-cyan-400/30 hover:bg-cyan-400/[0.02]">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.04] font-mono text-lg font-bold text-white transition-colors group-hover:border-cyan-400/30 group-hover:text-cyan-300">
                 #{product.rank}
               </div>
-              <div className="flex-1">
-                <h4 className="font-semibold text-text-primary">{product.modelName}</h4>
-                <p className="text-sm text-text-muted">{product.brand}</p>
+              <div className="min-w-0 flex-1">
+                <h4 className="truncate font-semibold text-white">{product.modelName}</h4>
+                <p className="truncate text-sm text-slate-400">{product.brand}</p>
               </div>
-              <div className="text-right flex-shrink-0">
-                <div className="font-mono text-success-400 font-bold text-lg">{product.overallScore.toFixed(1)}</div>
-                <div className="text-xs text-text-muted">SCORE</div>
+              <div className="flex shrink-0 flex-col items-end">
+                <div className="font-mono text-lg font-bold text-cyan-300">{product.overallScore.toFixed(1)}</div>
+                <div className="text-[10px] font-medium tracking-wider text-slate-500 uppercase">Score</div>
               </div>
             </div>
           ))

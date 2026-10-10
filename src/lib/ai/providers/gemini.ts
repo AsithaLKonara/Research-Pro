@@ -7,12 +7,13 @@ export class GeminiProvider extends AIProvider {
 
   constructor(config: ProviderConfig = {}) {
     super(config);
-    if (!config.apiKey && !process.env.GEMINI_API_KEY) {
+    const key = config.apiKey || process.env.GEMINI_API_KEY;
+    if (!key) {
       console.warn("GeminiProvider: API Key not found. Falling back to mock behavior or will throw on request.");
     }
     
     // The SDK automatically picks up GEMINI_API_KEY from process.env if not explicitly passed
-    this.ai = new GoogleGenAI({ apiKey: config.apiKey });
+    this.ai = new GoogleGenAI({ apiKey: key || "DUMMY_BUILD_KEY_DO_NOT_USE" });
   }
 
   async generateStructuredResponse<T>(

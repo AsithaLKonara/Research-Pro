@@ -7,12 +7,13 @@ export class GroqProvider extends AIProvider {
 
   constructor(config: ProviderConfig = {}) {
     super(config);
-    if (!config.apiKey && !process.env.GROQ_API_KEY) {
+    const key = config.apiKey || process.env.GROQ_API_KEY;
+    if (!key) {
       console.warn("GroqProvider: API Key not found. Falling back to mock behavior or will throw on request.");
     }
     
     this.groq = new Groq({
-      apiKey: config.apiKey || process.env.GROQ_API_KEY,
+      apiKey: key || "DUMMY_BUILD_KEY_DO_NOT_USE",
     });
   }
 

@@ -44,16 +44,16 @@ export function ResearchForm({ onSubmit, isLoading }: Props) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="card p-6 md:p-8 space-y-8 animate-scale-in">
+    <form onSubmit={handleSubmit} className="flex flex-col space-y-6">
       {/* Primary Query Input */}
-      <div className="space-y-3">
-        <label htmlFor="query" className="label text-sm uppercase tracking-wider text-accent-400 font-semibold">
+      <div>
+        <label htmlFor="query" className="sr-only">
           What do you want to research?
         </label>
         <div className="relative">
           <textarea
             id="query"
-            className="input-query pr-32"
+            className="block w-full resize-none rounded-xl border border-white/[0.08] bg-white/[0.02] p-4 pr-32 text-sm text-white placeholder-slate-500 shadow-sm transition hover:border-white/[0.16] focus:border-cyan-400 focus:bg-white/[0.04] focus:outline-none focus:ring-1 focus:ring-cyan-400 disabled:opacity-50"
             placeholder="e.g. Best smartphones in 2026 for under $1000"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
@@ -62,55 +62,85 @@ export function ResearchForm({ onSubmit, isLoading }: Props) {
             disabled={isLoading}
           />
           <div className="absolute bottom-3 right-3 hidden sm:block">
-             <button type="submit" disabled={isLoading || !query} className="btn btn-generate py-2 px-5 text-sm shadow-md disabled:opacity-50">
-               {isLoading ? "Running..." : "Generate Report"}
-             </button>
+            <button 
+              type="submit" 
+              disabled={isLoading || !query} 
+              className="inline-flex h-9 items-center justify-center rounded-lg bg-cyan-500 px-4 text-xs font-semibold text-cyan-950 transition hover:bg-cyan-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B1019] disabled:pointer-events-none disabled:opacity-50"
+            >
+              {isLoading ? "Running..." : "Start Research"}
+            </button>
           </div>
         </div>
         {/* Mobile button */}
-        <div className="sm:hidden pt-2">
-          <button type="submit" disabled={isLoading || !query} className="btn btn-generate w-full disabled:opacity-50">
-            {isLoading ? "Running..." : "Generate Report"}
+        <div className="mt-3 sm:hidden">
+          <button 
+            type="submit" 
+            disabled={isLoading || !query} 
+            className="inline-flex h-10 w-full items-center justify-center rounded-lg bg-cyan-500 px-4 text-sm font-semibold text-cyan-950 transition hover:bg-cyan-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B1019] disabled:pointer-events-none disabled:opacity-50"
+          >
+            {isLoading ? "Running..." : "Start Research"}
           </button>
         </div>
       </div>
-      
-      <div className="divider" />
+
+      <hr className="border-white/[0.06]" />
 
       {/* Secondary Parameters */}
       <div className="space-y-4">
         <div className="flex items-center justify-between">
-          <h4 className="text-sm font-medium text-text-primary">Research Parameters</h4>
+          <h4 className="text-sm font-medium text-slate-300">Basic configuration</h4>
           <button
             type="button"
             onClick={() => setIsAdvancedOpen(!isAdvancedOpen)}
-            className="text-xs font-mono text-text-muted hover:text-text-primary transition-colors flex items-center gap-1"
+            className="text-xs font-medium tracking-wide text-slate-500 transition hover:text-white"
           >
-            {isAdvancedOpen ? "[−] ADVANCED" : "[+] ADVANCED"}
+            {isAdvancedOpen ? "Hide advanced" : "Show advanced"}
           </button>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="form-group">
-            <label className="label text-[11px] uppercase tracking-wider">Category</label>
-            <input className="input" placeholder="e.g. Electronics" value={category} onChange={e => setCategory(e.target.value)} disabled={isLoading} />
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
+          <div className="flex flex-col gap-1.5">
+            <label className="text-xs font-medium text-slate-400">Category</label>
+            <input 
+              className="w-full rounded-lg border border-white/[0.08] bg-white/[0.02] px-3 py-2 text-sm text-white placeholder-slate-600 transition hover:border-white/[0.16] focus:border-cyan-400 focus:bg-white/[0.04] focus:outline-none focus:ring-1 focus:ring-cyan-400 disabled:opacity-50" 
+              placeholder="e.g. Electronics" 
+              value={category} 
+              onChange={e => setCategory(e.target.value)} 
+              disabled={isLoading} 
+            />
           </div>
-          <div className="form-group">
-            <label className="label text-[11px] uppercase tracking-wider">Niche</label>
-            <input className="input" placeholder="e.g. Smartphones" value={niche} onChange={e => setNiche(e.target.value)} disabled={isLoading} />
+          <div className="flex flex-col gap-1.5">
+            <label className="text-xs font-medium text-slate-400">Niche</label>
+            <input 
+              className="w-full rounded-lg border border-white/[0.08] bg-white/[0.02] px-3 py-2 text-sm text-white placeholder-slate-600 transition hover:border-white/[0.16] focus:border-cyan-400 focus:bg-white/[0.04] focus:outline-none focus:ring-1 focus:ring-cyan-400 disabled:opacity-50" 
+              placeholder="e.g. Smartphones" 
+              value={niche} 
+              onChange={e => setNiche(e.target.value)} 
+              disabled={isLoading} 
+            />
           </div>
-          <div className="form-group">
-            <label className="label text-[11px] uppercase tracking-wider">Market</label>
-            <select className="input select text-text-primary" value={market} onChange={e => setMarket(e.target.value as MarketScope)} disabled={isLoading}>
+          <div className="flex flex-col gap-1.5">
+            <label className="text-xs font-medium text-slate-400">Market</label>
+            <select 
+              className="w-full appearance-none rounded-lg border border-white/[0.08] bg-white/[0.02] px-3 py-2 text-sm text-white transition hover:border-white/[0.16] focus:border-cyan-400 focus:bg-white/[0.04] focus:outline-none focus:ring-1 focus:ring-cyan-400 disabled:opacity-50 [&>option]:bg-[#101621] [&>option]:text-white" 
+              value={market} 
+              onChange={e => setMarket(e.target.value as MarketScope)} 
+              disabled={isLoading}
+            >
               <option value="Worldwide">Worldwide</option>
               <option value="US">US</option>
               <option value="EU">EU</option>
               <option value="Asia">Asia</option>
             </select>
           </div>
-          <div className="form-group">
-            <label className="label text-[11px] uppercase tracking-wider">Candidates</label>
-            <select className="input select text-text-primary" value={productCount} onChange={e => setProductCount(parseInt(e.target.value))} disabled={isLoading}>
+          <div className="flex flex-col gap-1.5">
+            <label className="text-xs font-medium text-slate-400">Target candidates</label>
+            <select 
+              className="w-full appearance-none rounded-lg border border-white/[0.08] bg-white/[0.02] px-3 py-2 text-sm text-white transition hover:border-white/[0.16] focus:border-cyan-400 focus:bg-white/[0.04] focus:outline-none focus:ring-1 focus:ring-cyan-400 disabled:opacity-50 [&>option]:bg-[#101621] [&>option]:text-white" 
+              value={productCount} 
+              onChange={e => setProductCount(parseInt(e.target.value))} 
+              disabled={isLoading}
+            >
               <option value="5">Top 5</option>
               <option value="10">Top 10</option>
               <option value="15">Top 15</option>
@@ -121,7 +151,7 @@ export function ResearchForm({ onSubmit, isLoading }: Props) {
       </div>
 
       {isAdvancedOpen && (
-        <div className="pt-6 border-t border-border-default animate-slide-down">
+        <div className="animate-slide-down mt-2 rounded-xl border border-cyan-400/20 bg-cyan-400/[0.02] p-4">
           <AdvancedSettings />
         </div>
       )}
