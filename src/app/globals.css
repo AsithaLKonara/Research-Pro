@@ -104,7 +104,7 @@
 }
 
 /* ─── TAILWIND v4 THEME BRIDGE ───────────────────────────── */
-@theme inline {
+@theme {
   --color-background:     var(--bg-base);
   --color-foreground:     var(--text-primary);
   --color-surface-1:      var(--bg-surface-1);
@@ -120,8 +120,8 @@
   --color-success:        var(--success-500);
   --color-warning:        var(--warning-500);
   --color-danger:         var(--danger-500);
-  --font-sans:            var(--font-sans);
-  --font-mono:            var(--font-mono);
+  --font-sans:            "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono:            ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 /* ─── RESET & BASE ────────────────────────────────────────── */
