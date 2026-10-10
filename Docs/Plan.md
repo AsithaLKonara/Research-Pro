@@ -481,13 +481,13 @@ Days 14–16 · User-facing research
 
 Tasks
 
-1. Implement the executive summary, methodology, top-ten list and product detail sections.
-2. Build interactive charts for prices, ratings, specification comparisons, market signals and historical search interest where available.
-3. Build a sortable product comparison table with source links and missing-data indicators.
-4. Implement citations, footnotes, publication dates and source-quality labels.
-5. Implement CSV export for product metrics, source evidence and trend observations as separate files or clearly defined datasets.
-6. Implement a polished PDF report with title page, methodology, charts, product profiles, comparisons, references and limitations.
-7. Support an optional business-pitch report mode with customer segments, differentiation and substantiated claims.
+1. ✅ Implement the executive summary, methodology, top-ten list and product detail sections.
+2. ✅ Build interactive charts for prices, ratings, specification comparisons, market signals and historical search interest where available.
+3. ✅ Build a sortable product comparison table with source links and missing-data indicators.
+4. ✅ Implement citations, footnotes, publication dates and source-quality labels.
+5. ✅ Implement CSV export for product metrics, source evidence and trend observations as separate files or clearly defined datasets.
+6. ✅ Implement a polished PDF report with title page, methodology, charts, product profiles, comparisons, references and limitations.
+7. ✅ Support an optional business-pitch report mode with customer segments, differentiation and substantiated claims.
 
 Acceptance criteria
 

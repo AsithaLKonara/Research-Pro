@@ -5,10 +5,21 @@ import { ProductRanking } from "./ProductRanking";
 import { ComparisonTable } from "./ComparisonTable";
 import { MarketInsights } from "./MarketInsights";
 import { TrendCharts } from "./TrendCharts";
+import { PipelineResult } from "@/lib/research/pipeline";
+import { generateCsv, downloadCsv } from "@/lib/exports/csv";
+import { downloadPdf } from "@/lib/exports/pdf";
 
-export function ReportContainer() {
-  // In Sprint 1, this just renders placeholders.
-  // In Sprint 6, this will take the `ResearchReport` object as a prop.
+export function ReportContainer({ result }: { result?: PipelineResult }) {
+  const handleExportCsv = () => {
+    if (!result?.rankedProducts) return;
+    const csvStr = generateCsv(result.rankedProducts);
+    downloadCsv(csvStr, "product_intelligence_report.csv");
+  };
+
+  const handleExportPdf = async () => {
+    if (!result?.rankedProducts) return;
+    await downloadPdf(result.rankedProducts, "product_intelligence_report.pdf");
+  };
 
   return (
     <div className="space-y-6 animate-fade-in">
@@ -18,14 +29,27 @@ export function ReportContainer() {
           Research Report
         </h2>
         <div className="flex gap-2">
-          <button className="btn btn-secondary btn-sm">Export CSV</button>
-          <button className="btn btn-secondary btn-sm">Export PDF</button>
+          <button 
+            onClick={handleExportCsv}
+            disabled={!result}
+            className="btn btn-secondary btn-sm disabled:opacity-50"
+          >
+            Export CSV
+          </button>
+          <button 
+            onClick={handleExportPdf}
+            disabled={!result}
+            className="btn btn-secondary btn-sm disabled:opacity-50"
+          >
+            Export PDF
+          </button>
         </div>
       </div>
 
       {/* Top Row: Exec Summary + Market Insights */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2">
+          {/* ExecutiveSummary would also take plan/coverage later */}
           <ExecutiveSummary />
         </div>
         <div className="lg:col-span-1">
@@ -34,10 +58,10 @@ export function ReportContainer() {
       </div>
 
       {/* Middle Row: Ranking */}
-      <ProductRanking />
+      <ProductRanking products={result?.rankedProducts} />
 
       {/* Bottom Row: Table & Charts */}
-      <ComparisonTable />
+      <ComparisonTable products={result?.rankedProducts} />
       
       <div className="mt-8 pt-8 border-t border-border-subtle">
         <TrendCharts />
