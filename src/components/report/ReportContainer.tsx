@@ -6,6 +6,7 @@ import { downloadPdf } from "@/lib/exports/pdf";
 import { ProductRanking } from "./ProductRanking";
 import { ComparisonTable } from "./ComparisonTable";
 import { ExecutiveSummary } from "./ExecutiveSummary";
+import { TrendCharts } from "./TrendCharts";
 
 export function ReportContainer({ result }: { result: PipelineResult }) {
   const handleExportCsv = () => {
@@ -80,6 +81,7 @@ export function ReportContainer({ result }: { result: PipelineResult }) {
 
       <ComparisonTable products={result.rankedProducts} />
       
+      <TrendCharts products={result.rankedProducts} />
     </div>
   );
 }
