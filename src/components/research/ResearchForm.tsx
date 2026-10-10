@@ -43,9 +43,9 @@ export function ResearchForm() {
         </div>
         <div className="form-group">
           <label className="label">Product Count</label>
-          <select className="input select text-text-primary">
+          <select className="input select text-text-primary" defaultValue="10">
             <option value="5">5 products</option>
-            <option value="10" selected>10 products</option>
+            <option value="10">10 products</option>
             <option value="15">15 products</option>
             <option value="20">20 products</option>
           </select>
