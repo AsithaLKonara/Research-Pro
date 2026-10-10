@@ -438,14 +438,14 @@ Days 7–10 · Research engine
 
 Tasks
 
-1. Implement web discovery and source extraction using supported Gemini grounding or an explicitly permitted search provider.
-2. Extract official product specifications, review findings, prices, ratings and sales indicators when present.
-3. Implement YouTube metadata collection with documented API quotas.
-4. Implement manual CSV import for Google Trends and Keyword Planner data.
-5. Add World Bank and UN Comtrade adapters for relevant country-level market context.
-6. Add optional Reddit integration only after validating credentials and terms of access.
-7. Normalize URLs, dates, currency, country codes, product identifiers and duplicate source records.
-8. Build a data-coverage matrix showing available, estimated, unavailable and conflicting metrics.
+1. ✅ Implement web discovery and source extraction using supported Gemini grounding or an explicitly permitted search provider.
+2. ✅ Extract official product specifications, review findings, prices, ratings and sales indicators when present.
+3. ✅ Implement YouTube metadata collection with documented API quotas.
+4. ✅ Implement manual CSV import for Google Trends and Keyword Planner data.
+5. ✅ Add World Bank and UN Comtrade adapters for relevant country-level market context.
+6. ✅ Add optional Reddit integration only after validating credentials and terms of access.
+7. ✅ Normalize URLs, dates, currency, country codes, product identifiers and duplicate source records.
+8. ✅ Build a data-coverage matrix showing available, estimated, unavailable and conflicting metrics.
 
 Acceptance criteria
 

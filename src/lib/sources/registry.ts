@@ -22,6 +22,13 @@ class SourceRegistry {
   }
 }
 
+import { webSearchAdapter } from "./web-search";
+import { youtubeAdapter } from "./youtube";
+import { trendsImportAdapter } from "./trends-import";
+
 export const sourceRegistry = new SourceRegistry();
 
-// Initialize empty for now. Adapters will be registered in Sprint 3.
+// Initialize the registry with available adapters
+sourceRegistry.register(webSearchAdapter);
+sourceRegistry.register(youtubeAdapter);
+sourceRegistry.register(trendsImportAdapter);
