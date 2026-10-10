@@ -398,10 +398,11 @@ Tasks
 1. ✅ Initialize Next.js App Router, TypeScript, Tailwind CSS v4, ESLint and formatting.
 2. ✅ Install Zod, charting, CSV and PDF dependencies.
 3. ✅ Create environment validation for Gemini, Groq, optional source credentials and server configuration.
-4. ✅ Define research request, product candidate, source evidence, metric observation, comparison score and final report types.
+4. ✅ Define research request, product candidate, source evidence, metric observation, comparison score and final report terminal types.
 5. ✅ Create a source registry with capability declarations and explicit unsupported-data responses.
 6. ✅ Prepare the optional Prisma/PostgreSQL schema without making the application depend on a database.
 7. ✅ Implement the main responsive research form and report layout using fixture data.
+8. ✅ Perform UX Audit and redesign to a high-end terminal dashboard (CSS Grid, typography, hierarchy).
 
 Acceptance criteria
 
