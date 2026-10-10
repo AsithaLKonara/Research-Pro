@@ -460,13 +460,13 @@ Days 11–13 · Core analytics
 
 Tasks
 
-1. Resolve exact products, model generations and regional variants.
-2. Define metric schemas by category rather than using one fixed specification schema for everything.
-3. Implement scoring weights, normalization, missing-data handling and tie-breaking in deterministic TypeScript.
-4. Implement independent sorting by price, ratings, sales indicators, momentum and overall score.
-5. Implement global versus country-specific comparisons, with currency and date normalization.
-6. Implement evidence quality and coverage scoring.
-7. Build automated consistency checks for contradictory specifications and out-of-date observations.
+1. ✅ Resolve exact products, model generations and regional variants.
+2. ✅ Define metric schemas by category rather than using one fixed specification schema for everything.
+3. ✅ Implement scoring weights, normalization, missing-data handling and tie-breaking in deterministic TypeScript.
+4. ✅ Implement independent sorting by price, ratings, sales indicators, momentum and overall score.
+5. ✅ Implement global versus country-specific comparisons, with currency and date normalization.
+6. ✅ Implement evidence quality and coverage scoring.
+7. ✅ Build automated consistency checks for contradictory specifications and out-of-date observations.
 
 Acceptance criteria
 
