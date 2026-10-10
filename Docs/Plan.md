@@ -502,14 +502,14 @@ Days 17–20 · MVP readiness
 
 Tasks
 
-1. Connect the form, research job, data collection, ranking engine, report rendering and export pipeline.
-2. Implement progress states for planning, discovery, extraction, validation, ranking and report generation.
-3. Test partial failures, empty results, rate limits, malformed model outputs and provider outages.
-4. Implement request validation, bounded concurrency, timeouts and ephemeral job cleanup.
-5. Protect against prompt injection from retrieved web pages, unsafe URLs, SSRF and malicious document content.
-6. Test mobile responsiveness, keyboard navigation, accessibility, performance and PDF/CSV exports.
-7. Run end-to-end tests for smartphone, laptop, appliance and a category with sparse data.
-8. Deploy the single-page MVP and verify production environment variables, request limits and observability.
+1. ✅ Connect the form, research job, data collection, ranking engine, report rendering and export pipeline.
+2. ✅ Implement progress states for planning, discovery, extraction, validation, ranking and report generation.
+3. ✅ Test partial failures, empty results, rate limits, malformed model outputs and provider outages.
+4. ✅ Implement request validation, bounded concurrency, timeouts and ephemeral job cleanup.
+5. ✅ Protect against prompt injection from retrieved web pages, unsafe URLs, SSRF and malicious document content.
+6. ✅ Test mobile responsiveness, keyboard navigation, accessibility, performance and PDF/CSV exports.
+7. ✅ Run end-to-end tests for smartphone, laptop, appliance and a category with sparse data.
+8. ✅ Deploy the single-page MVP and verify production environment variables, request limits and observability.
 
 Acceptance criteria
 
