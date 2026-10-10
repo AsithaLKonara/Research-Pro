@@ -417,13 +417,13 @@ Days 4–6 · AI foundation
 
 Tasks
 
-1. Implement provider interfaces and adapters for Gemini and Groq.
-2. Create a query-planning prompt that returns structured categories, product candidates, search queries and required metrics.
-3. Implement structured-output schemas and validate every AI response with Zod.
-4. Configure Gemini for source-grounded research where available, and Groq for extraction, clustering and structured classification.
-5. Implement retry limits, request timeouts, rate-limit handling, token budgets and provider-specific error messages.
-6. Separate research planning, extraction, ranking and report synthesis prompts.
-7. Build a mock provider so the entire application can be tested without consuming API quota.
+1. ✅ Implement provider interfaces and adapters for Gemini and Groq.
+2. ✅ Create a query-planning prompt that returns structured categories, product candidates, search queries and required metrics.
+3. ✅ Implement structured-output schemas and validate every AI response with Zod.
+4. ✅ Configure Gemini for source-grounded research where available, and Groq for extraction, clustering and structured classification.
+5. ✅ Implement retry limits, request timeouts, rate-limit handling, token budgets and provider-specific error messages.
+6. ✅ Separate research planning, extraction, ranking and report synthesis prompts.
+7. ✅ Build a mock provider so the entire application can be tested without consuming API quota.
 
 Acceptance criteria
 
